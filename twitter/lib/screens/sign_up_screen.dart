@@ -29,6 +29,8 @@ class _SignUpState extends State<SignUp> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    _nameController.dispose();
   }
 
   @override

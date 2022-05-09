@@ -12,8 +12,22 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  late final TextEditingController _emailController;
+  late final TextEditingController _passwordController;
+
+  @override
+  initState() {
+    super.initState();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +55,17 @@ class _SignInState extends State<SignIn> {
                   context: context,
                   hint: 'Enter password',
                   isPassword: true),
-              SubmitButton(text: 'Submit', pressed: () {},),
+              SubmitButton(
+                text: 'Submit',
+                pressed: () {},
+              ),
               TextLinkButton(
                   text: 'Sign up',
                   pressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const SignUp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUp()));
                   }),
               TextLinkButton(
                 text: 'Forgot password?',
