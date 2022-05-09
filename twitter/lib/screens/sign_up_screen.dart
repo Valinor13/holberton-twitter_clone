@@ -13,7 +13,8 @@ class _SignUpState extends State<SignUp> {
   late final TextEditingController _nameController;
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
-  late final TextEditingController _confirmPasswordController;
+  late final TextEditingController _confirmController;
+  late final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   initState() {
@@ -21,7 +22,7 @@ class _SignUpState extends State<SignUp> {
     _nameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
-    _confirmPasswordController = TextEditingController();
+    _confirmController = TextEditingController();
   }
 
   @override
@@ -29,7 +30,7 @@ class _SignUpState extends State<SignUp> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _confirmPasswordController.dispose();
+    _confirmController.dispose();
     _nameController.dispose();
   }
 
@@ -46,30 +47,33 @@ class _SignUpState extends State<SignUp> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomEntryField(
-                  controller: _nameController,
-                  context: context,
-                  hint: 'Enter name'),
-              CustomEntryField(
-                  controller: _emailController,
-                  context: context,
-                  hint: 'Enter email'),
-              CustomEntryField(
-                  controller: _passwordController,
-                  context: context,
-                  hint: 'Enter password',
-                  isPassword: true),
-              CustomEntryField(
-                  controller: _confirmPasswordController,
-                  context: context,
-                  hint: 'Confirm password',
-                  isPassword: true),
-              SubmitButton(text: 'Sign up', pressed: () {}),
-            ],
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomEntryField(
+                    controller: _nameController,
+                    context: context,
+                    hint: 'Enter name'),
+                CustomEntryField(
+                    controller: _emailController,
+                    context: context,
+                    hint: 'Enter email'),
+                CustomEntryField(
+                    controller: _passwordController,
+                    context: context,
+                    hint: 'Enter password',
+                    isPassword: true),
+                CustomEntryField(
+                    controller: _confirmController,
+                    context: context,
+                    hint: 'Confirm password',
+                    isPassword: true),
+                SubmitButton(text: 'Sign up', pressed: () {}),
+              ],
+            ),
           ),
         ),
       ),
