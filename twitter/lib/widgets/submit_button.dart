@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class SubmitButton extends StatelessWidget {
   final String text;
-  const SubmitButton({Key? key, required this.text}) : super(key: key);
+  final VoidCallback? pressed;
+  const SubmitButton({Key? key, required this.text, required this.pressed}) : super(key: key);
 
   // Elevated Button
   @override
@@ -19,7 +20,7 @@ class SubmitButton extends StatelessWidget {
       child: Center(
         child: ElevatedButton(
           style: style,
-          onPressed: () {},
+          onPressed: pressed,
           child: Text(text),
         ),
       ),

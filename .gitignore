@@ -1,0 +1,8 @@
+windows/
+android/
+web/
+test/
+ios/
+.metadata
+pubspec.lock
+analysis_options.yaml
