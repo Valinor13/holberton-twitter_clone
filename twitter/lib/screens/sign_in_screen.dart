@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/screens/forgot_password_screen.dart';
 import 'package:twitter/screens/sign_up_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/submit_button.dart';
@@ -69,7 +70,10 @@ class _SignInState extends State<SignIn> {
                   }),
               TextLinkButton(
                 text: 'Forgot password?',
-                pressed: () {},
+                pressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const ForgetPassword()));
+                },
               ),
             ],
           ),
