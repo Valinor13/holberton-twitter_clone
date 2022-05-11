@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/widgets/bottom_bar_menu.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
       body: const Center(
         child: Text('Search'),
       ),
+      bottomNavigationBar: BottomMenuBar(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/widgets/bottom_bar_menu.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       body: const Center(
         child: Text('Notifications'),
       ),
+      bottomNavigationBar: BottomMenuBar(),
     );
   }
 }
