@@ -1,16 +1,31 @@
 class FakeData {
     final List<Map<String, dynamic>> users = [
     {
-      'name': 'Rondel Stepper',
-      'username': '@TheAlphamerc',
+      'name': 'Dude',
+      'username': '@dude',
       'imgUrl':
-          'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+          'https://noguiltlife.com/wp-content/uploads/2021/08/dude-from-Free-Guy.jpg.webp',
+      'posts': [
+        'I can bench press a sentence.',
+        'There are three things I love in life: - Kicking @ss\n- TBD\n- insert 3rd thing here',
+        "From the moment we grow up, we hear you should do this, you shouldn't do this. \"Should\" is how others expect us to live. When we choose \"should,\" we choose to live our life for someone else. Eeasy to choose \"should\" but there's no fulfillment in it, or success.",
+      ],
+      'hashtags': [
+        '#Bad@ss',
+        '#Hashtag',
+      ],
     },
     {
       'name': 'Sonu Sharma',
       'username': '@Sonusihj',
       'imgUrl':
           'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      'posts': [
+        "From the moment we grow up, we hear you should do this, you shouldn't do this. \"Should\" is how others expect us to live. When we choose \"should,\" we choose to live our life for someone else. Eeasy to choose \"should\" but there's no fulfillment in it, or success.",
+      ],
+      'hashtags': [
+        '#Motivated',
+      ],
     },
     {
       'name': 'Deborah Couser',
