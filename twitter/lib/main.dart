@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<AppState>(create: (_) => AppState()),
+        ChangeNotifierProvider<AppState>(create: (_) => AppState()),
       ],
       child: const MaterialApp(
         home: SignIn(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:twitter/providers/app_state.dart';
 import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/screens/notifications_screen.dart';
@@ -15,8 +16,6 @@ class Portal extends StatefulWidget {
 }
 
 class _PortalState extends State<Portal> {
-  final _ = AppState();
-
   final titleOptions = [
     'Home',
     'Search',
@@ -33,18 +32,22 @@ class _PortalState extends State<Portal> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          titleOptions[_.pageIndex],
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-      ),
-      body: menuOptions[_.pageIndex],
-      bottomNavigationBar: BottomMenuBar(index: _.pageIndex),
-      drawer: const SideBarMenu(),
+    return Consumer<AppState>(
+      builder: (BuildContext context, AppState appState, Widget? child) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              titleOptions[appState.pageIndex],
+            ),
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+          ),
+          body: menuOptions[appState.pageIndex],
+          bottomNavigationBar: const BottomMenuBar(),
+          drawer: const SideBarMenu(),
+        );
+      },
     );
   }
 }
