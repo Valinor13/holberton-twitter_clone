@@ -25,7 +25,7 @@ class _PortalState extends State<Portal> {
 
   final menuOptions = [
     const HomeScreen(),
-    const SearchScreen(),
+    SearchScreen(),
     const NotificationsScreen(),
     const ChatsScreen(),
   ];
