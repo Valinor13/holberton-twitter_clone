@@ -1,53 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/providers/app_state.dart';
-import 'package:twitter/screens/home_screen.dart';
-import 'package:twitter/screens/notifications_screen.dart';
-import 'package:twitter/screens/search_screen.dart';
-import 'package:twitter/screens/chats_screen.dart';
 
 // create row of icons that will be used in the bottom bar
 // each icon navigates to corresponding screen
 // icon is highlighted with the color blue when page is active
 // uses pageIndex from app_state to track which page is active
-class BottomMenuBar extends StatefulWidget {
-  final menuOptions = [
-    const HomeScreen(),
-    const SearchScreen(),
-    const NotificationsScreen(),
-    const ChatsScreen(),
-  ];
-  BottomMenuBar({Key? key}) : super(key: key);
-
-  @override
-  _BottomMenuBarState createState() => _BottomMenuBarState();
-}
-
-class _BottomMenuBarState extends State<BottomMenuBar> {
-  int index = AppState().pageIndex;
+class BottomMenuBar extends StatelessWidget {
+  final int index;
+  const BottomMenuBar({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.bungalow_outlined),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
+          icon: Icon(Icons.search_outlined),
           label: 'Search',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications),
+          icon: Icon(Icons.notifications_outlined),
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat),
+          icon: Icon(Icons.email_outlined),
           label: 'Chats',
         ),
       ],
-      currentIndex: index,
       selectedItemColor: Colors.blue,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+      unselectedItemColor: Colors.grey,
+      currentIndex: index,
       onTap: (int index) {
         AppState().setpageIndex = index;
       },
