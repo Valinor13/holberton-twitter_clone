@@ -4,6 +4,9 @@ Holberton School Flutter
 This repository contains projects intended to teach the fundamentals of Flutter for Dart. What is flutter? 
 >Flutter is Google's portable UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 
+# twitter_clone
+- A user friendly app to view your friends and their messages
+
 ## Screenshots
 
 <div style='display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;'>
@@ -12,8 +15,6 @@ This repository contains projects intended to teach the fundamentals of Flutter 
   <img src="screenshots/search.png" width="400" height="auto" title="search page">
   <img src="screenshots/navbar.png" width="400" height="auto" title="navbar overlay">
 </div>
-
-1. twitter_clone
 
 Installation on Windows:
 -----
