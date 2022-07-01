@@ -6,9 +6,11 @@ This repository contains projects intended to teach the fundamentals of Flutter 
 
 ## Screenshots
 
-<div style='display: flex; flex-direction: row; justify-content: space-around;'>
+<div style='display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;'>
   <img src="screenshots/login.png" width="400" height="auto" title="login page">
-  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+  <img src="screenshots/signup.png" width="400" height="auto" title="signup page">
+  <img src="screenshots/search.png" width="400" height="auto" title="search page">
+  <img src="screenshots/navbar.png" width="400" height="auto" title="navbar overlay">
 </div>
 
 1. twitter_clone
